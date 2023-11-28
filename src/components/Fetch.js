@@ -14,7 +14,7 @@ const Fetch = ({url, renderSuccess=f=>f}) => {
 
     if(loading) return (<div>...Loading</div>)
     if(error) return (<p><pre> {JSON.stringify(error,null,2)} </pre></p>)
-    return <renderSuccess />
+    return renderSuccess(data)
 
 }
 

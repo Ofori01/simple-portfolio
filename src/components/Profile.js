@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 
-const Profile = () => {
+const Profile = (ProfileData) => {
+  
     
   return (
     <div>
