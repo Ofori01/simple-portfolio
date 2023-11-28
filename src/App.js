@@ -5,10 +5,11 @@ import Fetch from './components/Fetch';
 import Profile from './components/Profile';
 
 function App() {
+  const userName = 'Ofori01'
   return (
     <div className="App">
     <Header  logo={logo}/>
-    <Fetch url= {''} renderSuccess={Profile} />
+    <Fetch url= {`https://api.github.com/users/${userName}`} renderSuccess={Profile} />
       
     </div>
   );
