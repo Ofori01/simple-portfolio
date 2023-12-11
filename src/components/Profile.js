@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import './Profile.css';
+import Link from './Link';
 
 
 const Profile = ({data}) => {
@@ -11,12 +12,19 @@ const Profile = ({data}) => {
     <h2> {data.name} </h2>
     <img src = {data.avatar_url} alt ={data.name} className='Profile-avatar' />
     <ul>
-      <li> </li>
-    </ul>
     {
-      data.location && <p> <i>Location: {data.location} </i> </p>
+      data.location && (<li> <i>Location: {data.location} </i> </li>)
+    }
+     {
+     data.repos_url  && <li> <Link url={data.repos_url} title='repos_url' /> </li>
+      
+     } 
+    
+    </ul>
 
-      }
+
+
+      
        {
         /* add repo and readme components   */ 
        }
