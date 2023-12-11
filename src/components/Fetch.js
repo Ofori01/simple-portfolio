@@ -8,13 +8,12 @@ const Fetch = ({url, renderSuccess=f=>f}) => {
     useEffect(()=>{
         if(!url) return
         setLoading(true)
-        fetch(url).then((results)=>results.json()).then(setData).catch(setError);
-        setLoading(false)
+        fetch(url).then((results)=>results.json()).then(setData).then(()=> setLoading(false)).catch(setError);
     }, [url])
 
-    if(loading) return (<div>...Loading</div>)
-    if(error) return (<p><pre> {JSON.stringify(error,null,2)} </pre></p>)
-    return renderSuccess(data)
+    if(error) return (<pre> {JSON.stringify(error,null,2)} </pre>);
+    if(loading) return (<div>...Loading</div>);
+    if (data) return renderSuccess({data})
 
 }
 

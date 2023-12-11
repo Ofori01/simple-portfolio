@@ -1,14 +1,25 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState} from 'react';
+import './Profile.css';
 
-const Profile = (ProfileData) => {
+
+const Profile = ({data}) => {
 
     
   return (
-    <section>
+    <section className='Profile-container'>
     <h1> About Me </h1>
-    <h2> {ProfileData.name} </h2>
-    <img src = {ProfileData.avatar_url} alt ={ProfileData.name} />
-    <p> <i>Location: {ProfileData.location} </i> </p>
+    <h2> {data.name} </h2>
+    <img src = {data.avatar_url} alt ={data.name} className='Profile-avatar' />
+    <ul>
+      <li> </li>
+    </ul>
+    {
+      data.location && <p> <i>Location: {data.location} </i> </p>
+
+      }
+       {
+        /* add repo and readme components   */ 
+       }
 
     
       
