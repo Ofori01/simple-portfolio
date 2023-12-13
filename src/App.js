@@ -4,6 +4,7 @@ import logo from './assets/logo.svg'
 import {Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Repos from './components/Repos';
+import RepoDetails from './components/RepoDetails';
 
 function App() {
   const userName = 'Ofori01'
@@ -12,7 +13,9 @@ function App() {
     <Header  logo={logo}/>
     <Routes>
      <Route path='/' element={<Home  userName={userName} />} />
-     <Route path='repos' element={<Repos userName={userName} />} />
+     <Route path='repos' element={<Repos userName={userName} />}>
+        <Route path=':name' element={<RepoDetails userName={userName} />} />
+     </Route>
       
     </Routes>
       
