@@ -12,10 +12,10 @@ function App() {
     <div className="App">
     <Header  logo={logo}/>
     <Routes>
-     <Route path='/' element={<Home  userName={userName} />} />
-     <Route path='repos' element={<Repos userName={userName} />}>
-        <Route path=':name' element={<RepoDetails userName={userName} />} />
-     </Route>
+      <Route path='/' element={<Home  userName={userName} />} />
+      <Route path='repos' element={<Repos userName={userName} />} />
+      <Route path='repos/:name' element={<RepoDetails userName={userName} />} />
+    
       
     </Routes>
       

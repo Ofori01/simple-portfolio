@@ -1,8 +1,11 @@
 import React from 'react'
-import Link from './Link'
+import { useNavigate, Link } from 'react-router-dom'
+
 
 
 const Projects = ({data}) => {
+    
+
     console.log(data)
 
 if (!Array.isArray(data)) {
@@ -12,7 +15,7 @@ if(data) return (
     <div>
         <ul>
         {
-            data && data.map(({name, html_url,id})=> <li key={id}> <Link url={html_url} title={name} /> </li>)
+            data && data.map(({name, html_url,id})=> <li key={id} > <Link to={`/repos/:${name}`}>{name}</Link> </li>)
         
         }
 
