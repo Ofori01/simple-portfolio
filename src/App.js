@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home  userName={userName} />} />
       <Route path='repos' element={<Repos userName={userName} />} />
-      <Route path='repos/:name' element={<RepoDetails userName={userName} />} />
+      <Route path='/repos/:name' element={<RepoDetails userName={userName} />} />
     
       
     </Routes>

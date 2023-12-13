@@ -4,11 +4,11 @@ import RepoPage from './RepoPage'
 import { useParams } from 'react-router-dom'
 
 const RepoDetails = ({userName}) => {
-  const {name} = useParams();
-  console.log(useParams())
+  let params = useParams();
+  console.log(params)
   return (
     <div>
-    <Fetch url={`https://api.github.com/repos/${userName}/${name}`} renderSuccess={RepoPage }  />
+    <Fetch url={`https://api.github.com/repos/${userName}/${params.name}`} renderSuccess={RepoPage }  />
       
     </div>
   )

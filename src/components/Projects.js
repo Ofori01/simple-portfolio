@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -15,7 +15,7 @@ if(data) return (
     <div>
         <ul>
         {
-            data && data.map(({name, html_url,id})=> <li key={id} > <Link to={`/repos/:${name}`}>{name}</Link> </li>)
+            data && data.map(({name, html_url,id})=> <li key={id} > <Link to={`/repos/${name}`}>{name}</Link> </li>)
         
         }
 
