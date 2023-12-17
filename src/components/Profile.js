@@ -7,10 +7,12 @@ const Profile = ({data}) => {
 
     
   return (
-    <section className='Profile-container'>
-    <h1> About Me </h1>
-    <h2> {data.name} </h2>
-    <img src = {data.avatar_url} alt ={data.name} className='Profile-avatar' />
+    <section className='relative bg-gradient-to-tr bg-yellow-600 mt-4 w-full mx-auto'>
+      <h1> About Me </h1>
+    <div dir='ltr' className='flex flex-row bg-opacity-50 backdrop-filter backdrop-blur-lg items-baseline'>
+      <h2 className=' relative inset-0 self-start'> {data.name} </h2>
+      <img className=' absolute -top-10 -right-5 self-end rounded-full w-10 h-10' src = {data.avatar_url} alt ={data.name}  />
+    </div>
     <ul>
     {
       data.location && (<li> <i>Location: {data.location} </i> </li>)
