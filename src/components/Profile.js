@@ -9,11 +9,14 @@ const Profile = ({data}) => {
   return (
     <section className='relative bg-gradient-to-tr bg-yellow-600 mt-4 w-full mx-auto'>
       <h1> About Me </h1>
-    <div dir='ltr' className='flex flex-row bg-opacity-50 backdrop-filter backdrop-blur-lg items-baseline'>
-      <h2 className=' relative inset-0 self-start'> {data.name} </h2>
-      <img className=' absolute -top-10 -right-5 self-end rounded-full w-10 h-10' src = {data.avatar_url} alt ={data.name}  />
+    <div dir='ltr' className='relative flex flex-row bg-opacity-50 backdrop-filter backdrop-blur-lg items-center'>
+        <span className='absolute top-0 left-0'>Name: </span>
+        <div className='absolute top-0 right-0  flex flex-row gap-2 '>
+          <img className=' w-5 h-5 rounded-full ' src = {data.avatar_url} alt ={data.name}  />
+          <span> {data.name} </span>
+        </div>
     </div>
-    <ul>
+    <ul className='mt-5'>
     {
       data.location && (<li> <i>Location: {data.location} </i> </li>)
     }
